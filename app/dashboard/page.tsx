@@ -1,13 +1,17 @@
 'use client'
 
+import { UserButton } from '@clerk/nextjs'
 import React from 'react'
 
 const page = () => {
   return (
-    <div>
-         <h1 className="text-3xl font-bold mb-4">Tableau de bord</h1>
-         <p className="text-gray-700">Bienvenue sur votre application de gestion de parking.</p>
-    </div>
+    <div className="min-h-screen flex">
+    {/* Sidebar */}
+   
+
+    {/* Contenu principal */}
+    {/* <main className="flex-1 bg-gray-100 p-6">{children}</main> */}
+  </div>
   )
 }
 

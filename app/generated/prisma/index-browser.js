@@ -120,8 +120,7 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
 exports.Prisma.UserScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  email: 'email',
-  role: 'role'
+  email: 'email'
 };
 
 exports.Prisma.VehicleScalarFieldEnum = {
@@ -147,11 +146,11 @@ exports.Prisma.TransactionScalarFieldEnum = {
   date: 'date'
 };
 
-exports.Prisma.PricingScalarFieldEnum = {
+exports.Prisma.ParkingScalarFieldEnum = {
   id: 'id',
-  ratePerHour: 'ratePerHour',
-  effectiveDate: 'effectiveDate',
-  adminId: 'adminId'
+  name: 'name',
+  location: 'location',
+  totalSpaces: 'totalSpaces'
 };
 
 exports.Prisma.SortOrder = {
@@ -163,17 +162,14 @@ exports.Prisma.NullsOrder = {
   first: 'first',
   last: 'last'
 };
-exports.Role = exports.$Enums.Role = {
-  ADMIN: 'ADMIN',
-  AGENT: 'AGENT'
-};
+
 
 exports.Prisma.ModelName = {
   User: 'User',
   Vehicle: 'Vehicle',
   Ticket: 'Ticket',
   Transaction: 'Transaction',
-  Pricing: 'Pricing'
+  Parking: 'Parking'
 };
 
 /**

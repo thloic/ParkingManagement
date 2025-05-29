@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server"
+import prisma from '@/lib/prisma';
+
 
 // 🚗 GET : récupérer un véhicule par son ID
 export async function GET_BY_ID(_: Request, { params }: { params: { id: string } }) {

@@ -34,10 +34,10 @@ export type Ticket = $Result.DefaultSelection<Prisma.$TicketPayload>
  */
 export type Transaction = $Result.DefaultSelection<Prisma.$TransactionPayload>
 /**
- * Model Pricing
+ * Model Parking
  * 
  */
-export type Pricing = $Result.DefaultSelection<Prisma.$PricingPayload>
+export type Parking = $Result.DefaultSelection<Prisma.$ParkingPayload>
 
 /**
  * Enums
@@ -222,14 +222,14 @@ export class PrismaClient<
   get transaction(): Prisma.TransactionDelegate<ExtArgs, ClientOptions>;
 
   /**
-   * `prisma.pricing`: Exposes CRUD operations for the **Pricing** model.
+   * `prisma.parking`: Exposes CRUD operations for the **Parking** model.
     * Example usage:
     * ```ts
-    * // Fetch zero or more Pricings
-    * const pricings = await prisma.pricing.findMany()
+    * // Fetch zero or more Parkings
+    * const parkings = await prisma.parking.findMany()
     * ```
     */
-  get pricing(): Prisma.PricingDelegate<ExtArgs, ClientOptions>;
+  get parking(): Prisma.ParkingDelegate<ExtArgs, ClientOptions>;
 }
 
 export namespace Prisma {
@@ -674,7 +674,7 @@ export namespace Prisma {
     Vehicle: 'Vehicle',
     Ticket: 'Ticket',
     Transaction: 'Transaction',
-    Pricing: 'Pricing'
+    Parking: 'Parking'
   };
 
   export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -693,7 +693,7 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "user" | "vehicle" | "ticket" | "transaction" | "pricing"
+      modelProps: "user" | "vehicle" | "ticket" | "transaction" | "parking"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
@@ -993,77 +993,77 @@ export namespace Prisma {
           }
         }
       }
-      Pricing: {
-        payload: Prisma.$PricingPayload<ExtArgs>
-        fields: Prisma.PricingFieldRefs
+      Parking: {
+        payload: Prisma.$ParkingPayload<ExtArgs>
+        fields: Prisma.ParkingFieldRefs
         operations: {
           findUnique: {
-            args: Prisma.PricingFindUniqueArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload> | null
+            args: Prisma.ParkingFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload> | null
           }
           findUniqueOrThrow: {
-            args: Prisma.PricingFindUniqueOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>
+            args: Prisma.ParkingFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>
           }
           findFirst: {
-            args: Prisma.PricingFindFirstArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload> | null
+            args: Prisma.ParkingFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload> | null
           }
           findFirstOrThrow: {
-            args: Prisma.PricingFindFirstOrThrowArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>
+            args: Prisma.ParkingFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>
           }
           findMany: {
-            args: Prisma.PricingFindManyArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>[]
+            args: Prisma.ParkingFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>[]
           }
           create: {
-            args: Prisma.PricingCreateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>
+            args: Prisma.ParkingCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>
           }
           createMany: {
-            args: Prisma.PricingCreateManyArgs<ExtArgs>
+            args: Prisma.ParkingCreateManyArgs<ExtArgs>
             result: BatchPayload
           }
           createManyAndReturn: {
-            args: Prisma.PricingCreateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>[]
+            args: Prisma.ParkingCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>[]
           }
           delete: {
-            args: Prisma.PricingDeleteArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>
+            args: Prisma.ParkingDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>
           }
           update: {
-            args: Prisma.PricingUpdateArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>
+            args: Prisma.ParkingUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>
           }
           deleteMany: {
-            args: Prisma.PricingDeleteManyArgs<ExtArgs>
+            args: Prisma.ParkingDeleteManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateMany: {
-            args: Prisma.PricingUpdateManyArgs<ExtArgs>
+            args: Prisma.ParkingUpdateManyArgs<ExtArgs>
             result: BatchPayload
           }
           updateManyAndReturn: {
-            args: Prisma.PricingUpdateManyAndReturnArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>[]
+            args: Prisma.ParkingUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>[]
           }
           upsert: {
-            args: Prisma.PricingUpsertArgs<ExtArgs>
-            result: $Utils.PayloadToResult<Prisma.$PricingPayload>
+            args: Prisma.ParkingUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ParkingPayload>
           }
           aggregate: {
-            args: Prisma.PricingAggregateArgs<ExtArgs>
-            result: $Utils.Optional<AggregatePricing>
+            args: Prisma.ParkingAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateParking>
           }
           groupBy: {
-            args: Prisma.PricingGroupByArgs<ExtArgs>
-            result: $Utils.Optional<PricingGroupByOutputType>[]
+            args: Prisma.ParkingGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ParkingGroupByOutputType>[]
           }
           count: {
-            args: Prisma.PricingCountArgs<ExtArgs>
-            result: $Utils.Optional<PricingCountAggregateOutputType> | number
+            args: Prisma.ParkingCountArgs<ExtArgs>
+            result: $Utils.Optional<ParkingCountAggregateOutputType> | number
           }
         }
       }
@@ -1155,7 +1155,7 @@ export namespace Prisma {
     vehicle?: VehicleOmit
     ticket?: TicketOmit
     transaction?: TransactionOmit
-    pricing?: PricingOmit
+    parking?: ParkingOmit
   }
 
   /* Types for Logging */
@@ -1252,13 +1252,11 @@ export namespace Prisma {
   export type UserCountOutputType = {
     vehicles: number
     tickets: number
-    pricings: number
   }
 
   export type UserCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicles?: boolean | UserCountOutputTypeCountVehiclesArgs
     tickets?: boolean | UserCountOutputTypeCountTicketsArgs
-    pricings?: boolean | UserCountOutputTypeCountPricingsArgs
   }
 
   // Custom InputTypes
@@ -1284,13 +1282,6 @@ export namespace Prisma {
    */
   export type UserCountOutputTypeCountTicketsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     where?: TicketWhereInput
-  }
-
-  /**
-   * UserCountOutputType without action
-   */
-  export type UserCountOutputTypeCountPricingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PricingWhereInput
   }
 
 
@@ -1343,21 +1334,18 @@ export namespace Prisma {
     id: string | null
     name: string | null
     email: string | null
-    role: $Enums.Role | null
   }
 
   export type UserMaxAggregateOutputType = {
     id: string | null
     name: string | null
     email: string | null
-    role: $Enums.Role | null
   }
 
   export type UserCountAggregateOutputType = {
     id: number
     name: number
     email: number
-    role: number
     _all: number
   }
 
@@ -1366,21 +1354,18 @@ export namespace Prisma {
     id?: true
     name?: true
     email?: true
-    role?: true
   }
 
   export type UserMaxAggregateInputType = {
     id?: true
     name?: true
     email?: true
-    role?: true
   }
 
   export type UserCountAggregateInputType = {
     id?: true
     name?: true
     email?: true
-    role?: true
     _all?: true
   }
 
@@ -1460,7 +1445,6 @@ export namespace Prisma {
     id: string
     name: string
     email: string
-    role: $Enums.Role
     _count: UserCountAggregateOutputType | null
     _min: UserMinAggregateOutputType | null
     _max: UserMaxAggregateOutputType | null
@@ -1484,10 +1468,8 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     email?: boolean
-    role?: boolean
     vehicles?: boolean | User$vehiclesArgs<ExtArgs>
     tickets?: boolean | User$ticketsArgs<ExtArgs>
-    pricings?: boolean | User$pricingsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["user"]>
 
@@ -1495,28 +1477,24 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     email?: boolean
-    role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
     name?: boolean
     email?: boolean
-    role?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
     id?: boolean
     name?: boolean
     email?: boolean
-    role?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email" | "role", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "email", ExtArgs["result"]["user"]>
   export type UserInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicles?: boolean | User$vehiclesArgs<ExtArgs>
     tickets?: boolean | User$ticketsArgs<ExtArgs>
-    pricings?: boolean | User$pricingsArgs<ExtArgs>
     _count?: boolean | UserCountOutputTypeDefaultArgs<ExtArgs>
   }
   export type UserIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
@@ -1527,13 +1505,11 @@ export namespace Prisma {
     objects: {
       vehicles: Prisma.$VehiclePayload<ExtArgs>[]
       tickets: Prisma.$TicketPayload<ExtArgs>[]
-      pricings: Prisma.$PricingPayload<ExtArgs>[]
     }
     scalars: $Extensions.GetPayloadResult<{
       id: string
       name: string
       email: string
-      role: $Enums.Role
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1930,7 +1906,6 @@ export namespace Prisma {
     readonly [Symbol.toStringTag]: "PrismaPromise"
     vehicles<T extends User$vehiclesArgs<ExtArgs> = {}>(args?: Subset<T, User$vehiclesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$VehiclePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     tickets<T extends User$ticketsArgs<ExtArgs> = {}>(args?: Subset<T, User$ticketsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TicketPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-    pricings<T extends User$pricingsArgs<ExtArgs> = {}>(args?: Subset<T, User$pricingsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1963,7 +1938,6 @@ export namespace Prisma {
     readonly id: FieldRef<"User", 'String'>
     readonly name: FieldRef<"User", 'String'>
     readonly email: FieldRef<"User", 'String'>
-    readonly role: FieldRef<"User", 'Role'>
   }
     
 
@@ -2395,30 +2369,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     distinct?: TicketScalarFieldEnum | TicketScalarFieldEnum[]
-  }
-
-  /**
-   * User.pricings
-   */
-  export type User$pricingsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Pricing
-     */
-    select?: PricingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Pricing
-     */
-    omit?: PricingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PricingInclude<ExtArgs> | null
-    where?: PricingWhereInput
-    orderBy?: PricingOrderByWithRelationInput | PricingOrderByWithRelationInput[]
-    cursor?: PricingWhereUniqueInput
-    take?: number
-    skip?: number
-    distinct?: PricingScalarFieldEnum | PricingScalarFieldEnum[]
   }
 
   /**
@@ -5691,372 +5641,358 @@ export namespace Prisma {
 
 
   /**
-   * Model Pricing
+   * Model Parking
    */
 
-  export type AggregatePricing = {
-    _count: PricingCountAggregateOutputType | null
-    _avg: PricingAvgAggregateOutputType | null
-    _sum: PricingSumAggregateOutputType | null
-    _min: PricingMinAggregateOutputType | null
-    _max: PricingMaxAggregateOutputType | null
+  export type AggregateParking = {
+    _count: ParkingCountAggregateOutputType | null
+    _avg: ParkingAvgAggregateOutputType | null
+    _sum: ParkingSumAggregateOutputType | null
+    _min: ParkingMinAggregateOutputType | null
+    _max: ParkingMaxAggregateOutputType | null
   }
 
-  export type PricingAvgAggregateOutputType = {
-    ratePerHour: number | null
+  export type ParkingAvgAggregateOutputType = {
+    totalSpaces: number | null
   }
 
-  export type PricingSumAggregateOutputType = {
-    ratePerHour: number | null
+  export type ParkingSumAggregateOutputType = {
+    totalSpaces: number | null
   }
 
-  export type PricingMinAggregateOutputType = {
+  export type ParkingMinAggregateOutputType = {
     id: string | null
-    ratePerHour: number | null
-    effectiveDate: Date | null
-    adminId: string | null
+    name: string | null
+    location: string | null
+    totalSpaces: number | null
   }
 
-  export type PricingMaxAggregateOutputType = {
+  export type ParkingMaxAggregateOutputType = {
     id: string | null
-    ratePerHour: number | null
-    effectiveDate: Date | null
-    adminId: string | null
+    name: string | null
+    location: string | null
+    totalSpaces: number | null
   }
 
-  export type PricingCountAggregateOutputType = {
+  export type ParkingCountAggregateOutputType = {
     id: number
-    ratePerHour: number
-    effectiveDate: number
-    adminId: number
+    name: number
+    location: number
+    totalSpaces: number
     _all: number
   }
 
 
-  export type PricingAvgAggregateInputType = {
-    ratePerHour?: true
+  export type ParkingAvgAggregateInputType = {
+    totalSpaces?: true
   }
 
-  export type PricingSumAggregateInputType = {
-    ratePerHour?: true
+  export type ParkingSumAggregateInputType = {
+    totalSpaces?: true
   }
 
-  export type PricingMinAggregateInputType = {
+  export type ParkingMinAggregateInputType = {
     id?: true
-    ratePerHour?: true
-    effectiveDate?: true
-    adminId?: true
+    name?: true
+    location?: true
+    totalSpaces?: true
   }
 
-  export type PricingMaxAggregateInputType = {
+  export type ParkingMaxAggregateInputType = {
     id?: true
-    ratePerHour?: true
-    effectiveDate?: true
-    adminId?: true
+    name?: true
+    location?: true
+    totalSpaces?: true
   }
 
-  export type PricingCountAggregateInputType = {
+  export type ParkingCountAggregateInputType = {
     id?: true
-    ratePerHour?: true
-    effectiveDate?: true
-    adminId?: true
+    name?: true
+    location?: true
+    totalSpaces?: true
     _all?: true
   }
 
-  export type PricingAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Filter which Pricing to aggregate.
+     * Filter which Parking to aggregate.
      */
-    where?: PricingWhereInput
+    where?: ParkingWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pricings to fetch.
+     * Determine the order of Parkings to fetch.
      */
-    orderBy?: PricingOrderByWithRelationInput | PricingOrderByWithRelationInput[]
+    orderBy?: ParkingOrderByWithRelationInput | ParkingOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
      * Sets the start position
      */
-    cursor?: PricingWhereUniqueInput
+    cursor?: ParkingWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pricings from the position of the cursor.
+     * Take `±n` Parkings from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pricings.
+     * Skip the first `n` Parkings.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Count returned Pricings
+     * Count returned Parkings
     **/
-    _count?: true | PricingCountAggregateInputType
+    _count?: true | ParkingCountAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to average
     **/
-    _avg?: PricingAvgAggregateInputType
+    _avg?: ParkingAvgAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to sum
     **/
-    _sum?: PricingSumAggregateInputType
+    _sum?: ParkingSumAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the minimum value
     **/
-    _min?: PricingMinAggregateInputType
+    _min?: ParkingMinAggregateInputType
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
      * Select which fields to find the maximum value
     **/
-    _max?: PricingMaxAggregateInputType
+    _max?: ParkingMaxAggregateInputType
   }
 
-  export type GetPricingAggregateType<T extends PricingAggregateArgs> = {
-        [P in keyof T & keyof AggregatePricing]: P extends '_count' | 'count'
+  export type GetParkingAggregateType<T extends ParkingAggregateArgs> = {
+        [P in keyof T & keyof AggregateParking]: P extends '_count' | 'count'
       ? T[P] extends true
         ? number
-        : GetScalarType<T[P], AggregatePricing[P]>
-      : GetScalarType<T[P], AggregatePricing[P]>
+        : GetScalarType<T[P], AggregateParking[P]>
+      : GetScalarType<T[P], AggregateParking[P]>
   }
 
 
 
 
-  export type PricingGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    where?: PricingWhereInput
-    orderBy?: PricingOrderByWithAggregationInput | PricingOrderByWithAggregationInput[]
-    by: PricingScalarFieldEnum[] | PricingScalarFieldEnum
-    having?: PricingScalarWhereWithAggregatesInput
+  export type ParkingGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ParkingWhereInput
+    orderBy?: ParkingOrderByWithAggregationInput | ParkingOrderByWithAggregationInput[]
+    by: ParkingScalarFieldEnum[] | ParkingScalarFieldEnum
+    having?: ParkingScalarWhereWithAggregatesInput
     take?: number
     skip?: number
-    _count?: PricingCountAggregateInputType | true
-    _avg?: PricingAvgAggregateInputType
-    _sum?: PricingSumAggregateInputType
-    _min?: PricingMinAggregateInputType
-    _max?: PricingMaxAggregateInputType
+    _count?: ParkingCountAggregateInputType | true
+    _avg?: ParkingAvgAggregateInputType
+    _sum?: ParkingSumAggregateInputType
+    _min?: ParkingMinAggregateInputType
+    _max?: ParkingMaxAggregateInputType
   }
 
-  export type PricingGroupByOutputType = {
+  export type ParkingGroupByOutputType = {
     id: string
-    ratePerHour: number
-    effectiveDate: Date
-    adminId: string
-    _count: PricingCountAggregateOutputType | null
-    _avg: PricingAvgAggregateOutputType | null
-    _sum: PricingSumAggregateOutputType | null
-    _min: PricingMinAggregateOutputType | null
-    _max: PricingMaxAggregateOutputType | null
+    name: string
+    location: string
+    totalSpaces: number
+    _count: ParkingCountAggregateOutputType | null
+    _avg: ParkingAvgAggregateOutputType | null
+    _sum: ParkingSumAggregateOutputType | null
+    _min: ParkingMinAggregateOutputType | null
+    _max: ParkingMaxAggregateOutputType | null
   }
 
-  type GetPricingGroupByPayload<T extends PricingGroupByArgs> = Prisma.PrismaPromise<
+  type GetParkingGroupByPayload<T extends ParkingGroupByArgs> = Prisma.PrismaPromise<
     Array<
-      PickEnumerable<PricingGroupByOutputType, T['by']> &
+      PickEnumerable<ParkingGroupByOutputType, T['by']> &
         {
-          [P in ((keyof T) & (keyof PricingGroupByOutputType))]: P extends '_count'
+          [P in ((keyof T) & (keyof ParkingGroupByOutputType))]: P extends '_count'
             ? T[P] extends boolean
               ? number
-              : GetScalarType<T[P], PricingGroupByOutputType[P]>
-            : GetScalarType<T[P], PricingGroupByOutputType[P]>
+              : GetScalarType<T[P], ParkingGroupByOutputType[P]>
+            : GetScalarType<T[P], ParkingGroupByOutputType[P]>
         }
       >
     >
 
 
-  export type PricingSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type ParkingSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    ratePerHour?: boolean
-    effectiveDate?: boolean
-    adminId?: boolean
-    admin?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["pricing"]>
+    name?: boolean
+    location?: boolean
+    totalSpaces?: boolean
+  }, ExtArgs["result"]["parking"]>
 
-  export type PricingSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type ParkingSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    ratePerHour?: boolean
-    effectiveDate?: boolean
-    adminId?: boolean
-    admin?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["pricing"]>
+    name?: boolean
+    location?: boolean
+    totalSpaces?: boolean
+  }, ExtArgs["result"]["parking"]>
 
-  export type PricingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+  export type ParkingSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
     id?: boolean
-    ratePerHour?: boolean
-    effectiveDate?: boolean
-    adminId?: boolean
-    admin?: boolean | UserDefaultArgs<ExtArgs>
-  }, ExtArgs["result"]["pricing"]>
+    name?: boolean
+    location?: boolean
+    totalSpaces?: boolean
+  }, ExtArgs["result"]["parking"]>
 
-  export type PricingSelectScalar = {
+  export type ParkingSelectScalar = {
     id?: boolean
-    ratePerHour?: boolean
-    effectiveDate?: boolean
-    adminId?: boolean
+    name?: boolean
+    location?: boolean
+    totalSpaces?: boolean
   }
 
-  export type PricingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "ratePerHour" | "effectiveDate" | "adminId", ExtArgs["result"]["pricing"]>
-  export type PricingInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    admin?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type PricingIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    admin?: boolean | UserDefaultArgs<ExtArgs>
-  }
-  export type PricingIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    admin?: boolean | UserDefaultArgs<ExtArgs>
-  }
+  export type ParkingOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "name" | "location" | "totalSpaces", ExtArgs["result"]["parking"]>
 
-  export type $PricingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    name: "Pricing"
-    objects: {
-      admin: Prisma.$UserPayload<ExtArgs>
-    }
+  export type $ParkingPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Parking"
+    objects: {}
     scalars: $Extensions.GetPayloadResult<{
       id: string
-      ratePerHour: number
-      effectiveDate: Date
-      adminId: string
-    }, ExtArgs["result"]["pricing"]>
+      name: string
+      location: string
+      totalSpaces: number
+    }, ExtArgs["result"]["parking"]>
     composites: {}
   }
 
-  type PricingGetPayload<S extends boolean | null | undefined | PricingDefaultArgs> = $Result.GetResult<Prisma.$PricingPayload, S>
+  type ParkingGetPayload<S extends boolean | null | undefined | ParkingDefaultArgs> = $Result.GetResult<Prisma.$ParkingPayload, S>
 
-  type PricingCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
-    Omit<PricingFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
-      select?: PricingCountAggregateInputType | true
+  type ParkingCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ParkingFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ParkingCountAggregateInputType | true
     }
 
-  export interface PricingDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Pricing'], meta: { name: 'Pricing' } }
+  export interface ParkingDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Parking'], meta: { name: 'Parking' } }
     /**
-     * Find zero or one Pricing that matches the filter.
-     * @param {PricingFindUniqueArgs} args - Arguments to find a Pricing
+     * Find zero or one Parking that matches the filter.
+     * @param {ParkingFindUniqueArgs} args - Arguments to find a Parking
      * @example
-     * // Get one Pricing
-     * const pricing = await prisma.pricing.findUnique({
+     * // Get one Parking
+     * const parking = await prisma.parking.findUnique({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUnique<T extends PricingFindUniqueArgs>(args: SelectSubset<T, PricingFindUniqueArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findUnique<T extends ParkingFindUniqueArgs>(args: SelectSubset<T, ParkingFindUniqueArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find one Pricing that matches the filter or throw an error with `error.code='P2025'`
+     * Find one Parking that matches the filter or throw an error with `error.code='P2025'`
      * if no matches were found.
-     * @param {PricingFindUniqueOrThrowArgs} args - Arguments to find a Pricing
+     * @param {ParkingFindUniqueOrThrowArgs} args - Arguments to find a Parking
      * @example
-     * // Get one Pricing
-     * const pricing = await prisma.pricing.findUniqueOrThrow({
+     * // Get one Parking
+     * const parking = await prisma.parking.findUniqueOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findUniqueOrThrow<T extends PricingFindUniqueOrThrowArgs>(args: SelectSubset<T, PricingFindUniqueOrThrowArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findUniqueOrThrow<T extends ParkingFindUniqueOrThrowArgs>(args: SelectSubset<T, ParkingFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Pricing that matches the filter.
+     * Find the first Parking that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PricingFindFirstArgs} args - Arguments to find a Pricing
+     * @param {ParkingFindFirstArgs} args - Arguments to find a Parking
      * @example
-     * // Get one Pricing
-     * const pricing = await prisma.pricing.findFirst({
+     * // Get one Parking
+     * const parking = await prisma.parking.findFirst({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirst<T extends PricingFindFirstArgs>(args?: SelectSubset<T, PricingFindFirstArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+    findFirst<T extends ParkingFindFirstArgs>(args?: SelectSubset<T, ParkingFindFirstArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find the first Pricing that matches the filter or
+     * Find the first Parking that matches the filter or
      * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PricingFindFirstOrThrowArgs} args - Arguments to find a Pricing
+     * @param {ParkingFindFirstOrThrowArgs} args - Arguments to find a Parking
      * @example
-     * // Get one Pricing
-     * const pricing = await prisma.pricing.findFirstOrThrow({
+     * // Get one Parking
+     * const parking = await prisma.parking.findFirstOrThrow({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      */
-    findFirstOrThrow<T extends PricingFindFirstOrThrowArgs>(args?: SelectSubset<T, PricingFindFirstOrThrowArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    findFirstOrThrow<T extends ParkingFindFirstOrThrowArgs>(args?: SelectSubset<T, ParkingFindFirstOrThrowArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Find zero or more Pricings that matches the filter.
+     * Find zero or more Parkings that matches the filter.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PricingFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @param {ParkingFindManyArgs} args - Arguments to filter and select certain fields only.
      * @example
-     * // Get all Pricings
-     * const pricings = await prisma.pricing.findMany()
+     * // Get all Parkings
+     * const parkings = await prisma.parking.findMany()
      * 
-     * // Get first 10 Pricings
-     * const pricings = await prisma.pricing.findMany({ take: 10 })
+     * // Get first 10 Parkings
+     * const parkings = await prisma.parking.findMany({ take: 10 })
      * 
      * // Only select the `id`
-     * const pricingWithIdOnly = await prisma.pricing.findMany({ select: { id: true } })
+     * const parkingWithIdOnly = await prisma.parking.findMany({ select: { id: true } })
      * 
      */
-    findMany<T extends PricingFindManyArgs>(args?: SelectSubset<T, PricingFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+    findMany<T extends ParkingFindManyArgs>(args?: SelectSubset<T, ParkingFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
     /**
-     * Create a Pricing.
-     * @param {PricingCreateArgs} args - Arguments to create a Pricing.
+     * Create a Parking.
+     * @param {ParkingCreateArgs} args - Arguments to create a Parking.
      * @example
-     * // Create one Pricing
-     * const Pricing = await prisma.pricing.create({
+     * // Create one Parking
+     * const Parking = await prisma.parking.create({
      *   data: {
-     *     // ... data to create a Pricing
+     *     // ... data to create a Parking
      *   }
      * })
      * 
      */
-    create<T extends PricingCreateArgs>(args: SelectSubset<T, PricingCreateArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    create<T extends ParkingCreateArgs>(args: SelectSubset<T, ParkingCreateArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Create many Pricings.
-     * @param {PricingCreateManyArgs} args - Arguments to create many Pricings.
+     * Create many Parkings.
+     * @param {ParkingCreateManyArgs} args - Arguments to create many Parkings.
      * @example
-     * // Create many Pricings
-     * const pricing = await prisma.pricing.createMany({
+     * // Create many Parkings
+     * const parking = await prisma.parking.createMany({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      *     
      */
-    createMany<T extends PricingCreateManyArgs>(args?: SelectSubset<T, PricingCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    createMany<T extends ParkingCreateManyArgs>(args?: SelectSubset<T, ParkingCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Create many Pricings and returns the data saved in the database.
-     * @param {PricingCreateManyAndReturnArgs} args - Arguments to create many Pricings.
+     * Create many Parkings and returns the data saved in the database.
+     * @param {ParkingCreateManyAndReturnArgs} args - Arguments to create many Parkings.
      * @example
-     * // Create many Pricings
-     * const pricing = await prisma.pricing.createManyAndReturn({
+     * // Create many Parkings
+     * const parking = await prisma.parking.createManyAndReturn({
      *   data: [
      *     // ... provide data here
      *   ]
      * })
      * 
-     * // Create many Pricings and only return the `id`
-     * const pricingWithIdOnly = await prisma.pricing.createManyAndReturn({
+     * // Create many Parkings and only return the `id`
+     * const parkingWithIdOnly = await prisma.parking.createManyAndReturn({
      *   select: { id: true },
      *   data: [
      *     // ... provide data here
@@ -6066,28 +6002,28 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    createManyAndReturn<T extends PricingCreateManyAndReturnArgs>(args?: SelectSubset<T, PricingCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+    createManyAndReturn<T extends ParkingCreateManyAndReturnArgs>(args?: SelectSubset<T, ParkingCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Delete a Pricing.
-     * @param {PricingDeleteArgs} args - Arguments to delete one Pricing.
+     * Delete a Parking.
+     * @param {ParkingDeleteArgs} args - Arguments to delete one Parking.
      * @example
-     * // Delete one Pricing
-     * const Pricing = await prisma.pricing.delete({
+     * // Delete one Parking
+     * const Parking = await prisma.parking.delete({
      *   where: {
-     *     // ... filter to delete one Pricing
+     *     // ... filter to delete one Parking
      *   }
      * })
      * 
      */
-    delete<T extends PricingDeleteArgs>(args: SelectSubset<T, PricingDeleteArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    delete<T extends ParkingDeleteArgs>(args: SelectSubset<T, ParkingDeleteArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Update one Pricing.
-     * @param {PricingUpdateArgs} args - Arguments to update one Pricing.
+     * Update one Parking.
+     * @param {ParkingUpdateArgs} args - Arguments to update one Parking.
      * @example
-     * // Update one Pricing
-     * const pricing = await prisma.pricing.update({
+     * // Update one Parking
+     * const parking = await prisma.parking.update({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -6097,30 +6033,30 @@ export namespace Prisma {
      * })
      * 
      */
-    update<T extends PricingUpdateArgs>(args: SelectSubset<T, PricingUpdateArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    update<T extends ParkingUpdateArgs>(args: SelectSubset<T, ParkingUpdateArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
     /**
-     * Delete zero or more Pricings.
-     * @param {PricingDeleteManyArgs} args - Arguments to filter Pricings to delete.
+     * Delete zero or more Parkings.
+     * @param {ParkingDeleteManyArgs} args - Arguments to filter Parkings to delete.
      * @example
-     * // Delete a few Pricings
-     * const { count } = await prisma.pricing.deleteMany({
+     * // Delete a few Parkings
+     * const { count } = await prisma.parking.deleteMany({
      *   where: {
      *     // ... provide filter here
      *   }
      * })
      * 
      */
-    deleteMany<T extends PricingDeleteManyArgs>(args?: SelectSubset<T, PricingDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    deleteMany<T extends ParkingDeleteManyArgs>(args?: SelectSubset<T, ParkingDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Pricings.
+     * Update zero or more Parkings.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PricingUpdateManyArgs} args - Arguments to update one or more rows.
+     * @param {ParkingUpdateManyArgs} args - Arguments to update one or more rows.
      * @example
-     * // Update many Pricings
-     * const pricing = await prisma.pricing.updateMany({
+     * // Update many Parkings
+     * const parking = await prisma.parking.updateMany({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -6130,14 +6066,14 @@ export namespace Prisma {
      * })
      * 
      */
-    updateMany<T extends PricingUpdateManyArgs>(args: SelectSubset<T, PricingUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+    updateMany<T extends ParkingUpdateManyArgs>(args: SelectSubset<T, ParkingUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
 
     /**
-     * Update zero or more Pricings and returns the data updated in the database.
-     * @param {PricingUpdateManyAndReturnArgs} args - Arguments to update many Pricings.
+     * Update zero or more Parkings and returns the data updated in the database.
+     * @param {ParkingUpdateManyAndReturnArgs} args - Arguments to update many Parkings.
      * @example
-     * // Update many Pricings
-     * const pricing = await prisma.pricing.updateManyAndReturn({
+     * // Update many Parkings
+     * const parking = await prisma.parking.updateManyAndReturn({
      *   where: {
      *     // ... provide filter here
      *   },
@@ -6146,8 +6082,8 @@ export namespace Prisma {
      *   ]
      * })
      * 
-     * // Update zero or more Pricings and only return the `id`
-     * const pricingWithIdOnly = await prisma.pricing.updateManyAndReturn({
+     * // Update zero or more Parkings and only return the `id`
+     * const parkingWithIdOnly = await prisma.parking.updateManyAndReturn({
      *   select: { id: true },
      *   where: {
      *     // ... provide filter here
@@ -6160,56 +6096,56 @@ export namespace Prisma {
      * Read more here: https://pris.ly/d/null-undefined
      * 
      */
-    updateManyAndReturn<T extends PricingUpdateManyAndReturnArgs>(args: SelectSubset<T, PricingUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+    updateManyAndReturn<T extends ParkingUpdateManyAndReturnArgs>(args: SelectSubset<T, ParkingUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
     /**
-     * Create or update one Pricing.
-     * @param {PricingUpsertArgs} args - Arguments to update or create a Pricing.
+     * Create or update one Parking.
+     * @param {ParkingUpsertArgs} args - Arguments to update or create a Parking.
      * @example
-     * // Update or create a Pricing
-     * const pricing = await prisma.pricing.upsert({
+     * // Update or create a Parking
+     * const parking = await prisma.parking.upsert({
      *   create: {
-     *     // ... data to create a Pricing
+     *     // ... data to create a Parking
      *   },
      *   update: {
      *     // ... in case it already exists, update
      *   },
      *   where: {
-     *     // ... the filter for the Pricing we want to update
+     *     // ... the filter for the Parking we want to update
      *   }
      * })
      */
-    upsert<T extends PricingUpsertArgs>(args: SelectSubset<T, PricingUpsertArgs<ExtArgs>>): Prisma__PricingClient<$Result.GetResult<Prisma.$PricingPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+    upsert<T extends ParkingUpsertArgs>(args: SelectSubset<T, ParkingUpsertArgs<ExtArgs>>): Prisma__ParkingClient<$Result.GetResult<Prisma.$ParkingPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
     /**
-     * Count the number of Pricings.
+     * Count the number of Parkings.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PricingCountArgs} args - Arguments to filter Pricings to count.
+     * @param {ParkingCountArgs} args - Arguments to filter Parkings to count.
      * @example
-     * // Count the number of Pricings
-     * const count = await prisma.pricing.count({
+     * // Count the number of Parkings
+     * const count = await prisma.parking.count({
      *   where: {
-     *     // ... the filter for the Pricings we want to count
+     *     // ... the filter for the Parkings we want to count
      *   }
      * })
     **/
-    count<T extends PricingCountArgs>(
-      args?: Subset<T, PricingCountArgs>,
+    count<T extends ParkingCountArgs>(
+      args?: Subset<T, ParkingCountArgs>,
     ): Prisma.PrismaPromise<
       T extends $Utils.Record<'select', any>
         ? T['select'] extends true
           ? number
-          : GetScalarType<T['select'], PricingCountAggregateOutputType>
+          : GetScalarType<T['select'], ParkingCountAggregateOutputType>
         : number
     >
 
     /**
-     * Allows you to perform aggregations operations on a Pricing.
+     * Allows you to perform aggregations operations on a Parking.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PricingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @param {ParkingAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
      * @example
      * // Ordered by age ascending
      * // Where email contains prisma.io
@@ -6229,13 +6165,13 @@ export namespace Prisma {
      *   take: 10,
      * })
     **/
-    aggregate<T extends PricingAggregateArgs>(args: Subset<T, PricingAggregateArgs>): Prisma.PrismaPromise<GetPricingAggregateType<T>>
+    aggregate<T extends ParkingAggregateArgs>(args: Subset<T, ParkingAggregateArgs>): Prisma.PrismaPromise<GetParkingAggregateType<T>>
 
     /**
-     * Group by Pricing.
+     * Group by Parking.
      * Note, that providing `undefined` is treated as the value not being there.
      * Read more here: https://pris.ly/d/null-undefined
-     * @param {PricingGroupByArgs} args - Group by arguments.
+     * @param {ParkingGroupByArgs} args - Group by arguments.
      * @example
      * // Group by city, order by createdAt, get count
      * const result = await prisma.user.groupBy({
@@ -6250,14 +6186,14 @@ export namespace Prisma {
      * 
     **/
     groupBy<
-      T extends PricingGroupByArgs,
+      T extends ParkingGroupByArgs,
       HasSelectOrTake extends Or<
         Extends<'skip', Keys<T>>,
         Extends<'take', Keys<T>>
       >,
       OrderByArg extends True extends HasSelectOrTake
-        ? { orderBy: PricingGroupByArgs['orderBy'] }
-        : { orderBy?: PricingGroupByArgs['orderBy'] },
+        ? { orderBy: ParkingGroupByArgs['orderBy'] }
+        : { orderBy?: ParkingGroupByArgs['orderBy'] },
       OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
       ByFields extends MaybeTupleToUnion<T['by']>,
       ByValid extends Has<ByFields, OrderFields>,
@@ -6306,22 +6242,21 @@ export namespace Prisma {
             ? never
             : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
         }[OrderFields]
-    >(args: SubsetIntersection<T, PricingGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPricingGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+    >(args: SubsetIntersection<T, ParkingGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetParkingGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
   /**
-   * Fields of the Pricing model
+   * Fields of the Parking model
    */
-  readonly fields: PricingFieldRefs;
+  readonly fields: ParkingFieldRefs;
   }
 
   /**
-   * The delegate class that acts as a "Promise-like" for Pricing.
+   * The delegate class that acts as a "Promise-like" for Parking.
    * Why is this prefixed with `Prisma__`?
    * Because we want to prevent naming conflicts as mentioned in
    * https://github.com/prisma/prisma-client-js/issues/707
    */
-  export interface Prisma__PricingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+  export interface Prisma__ParkingClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
     readonly [Symbol.toStringTag]: "PrismaPromise"
-    admin<T extends UserDefaultArgs<ExtArgs> = {}>(args?: Subset<T, UserDefaultArgs<ExtArgs>>): Prisma__UserClient<$Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
     /**
      * Attaches callbacks for the resolution and/or rejection of the Promise.
      * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -6348,422 +6283,374 @@ export namespace Prisma {
 
 
   /**
-   * Fields of the Pricing model
+   * Fields of the Parking model
    */
-  interface PricingFieldRefs {
-    readonly id: FieldRef<"Pricing", 'String'>
-    readonly ratePerHour: FieldRef<"Pricing", 'Float'>
-    readonly effectiveDate: FieldRef<"Pricing", 'DateTime'>
-    readonly adminId: FieldRef<"Pricing", 'String'>
+  interface ParkingFieldRefs {
+    readonly id: FieldRef<"Parking", 'String'>
+    readonly name: FieldRef<"Parking", 'String'>
+    readonly location: FieldRef<"Parking", 'String'>
+    readonly totalSpaces: FieldRef<"Parking", 'Int'>
   }
     
 
   // Custom InputTypes
   /**
-   * Pricing findUnique
+   * Parking findUnique
    */
-  export type PricingFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Parking to fetch.
      */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * Filter, which Pricing to fetch.
-     */
-    where: PricingWhereUniqueInput
+    where: ParkingWhereUniqueInput
   }
 
   /**
-   * Pricing findUniqueOrThrow
+   * Parking findUniqueOrThrow
    */
-  export type PricingFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Parking to fetch.
      */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * Filter, which Pricing to fetch.
-     */
-    where: PricingWhereUniqueInput
+    where: ParkingWhereUniqueInput
   }
 
   /**
-   * Pricing findFirst
+   * Parking findFirst
    */
-  export type PricingFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Parking to fetch.
      */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * Filter, which Pricing to fetch.
-     */
-    where?: PricingWhereInput
+    where?: ParkingWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pricings to fetch.
+     * Determine the order of Parkings to fetch.
      */
-    orderBy?: PricingOrderByWithRelationInput | PricingOrderByWithRelationInput[]
+    orderBy?: ParkingOrderByWithRelationInput | ParkingOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Pricings.
+     * Sets the position for searching for Parkings.
      */
-    cursor?: PricingWhereUniqueInput
+    cursor?: ParkingWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pricings from the position of the cursor.
+     * Take `±n` Parkings from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pricings.
+     * Skip the first `n` Parkings.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Pricings.
+     * Filter by unique combinations of Parkings.
      */
-    distinct?: PricingScalarFieldEnum | PricingScalarFieldEnum[]
+    distinct?: ParkingScalarFieldEnum | ParkingScalarFieldEnum[]
   }
 
   /**
-   * Pricing findFirstOrThrow
+   * Parking findFirstOrThrow
    */
-  export type PricingFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Parking to fetch.
      */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * Filter, which Pricing to fetch.
-     */
-    where?: PricingWhereInput
+    where?: ParkingWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pricings to fetch.
+     * Determine the order of Parkings to fetch.
      */
-    orderBy?: PricingOrderByWithRelationInput | PricingOrderByWithRelationInput[]
+    orderBy?: ParkingOrderByWithRelationInput | ParkingOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for searching for Pricings.
+     * Sets the position for searching for Parkings.
      */
-    cursor?: PricingWhereUniqueInput
+    cursor?: ParkingWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pricings from the position of the cursor.
+     * Take `±n` Parkings from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pricings.
+     * Skip the first `n` Parkings.
      */
     skip?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
      * 
-     * Filter by unique combinations of Pricings.
+     * Filter by unique combinations of Parkings.
      */
-    distinct?: PricingScalarFieldEnum | PricingScalarFieldEnum[]
+    distinct?: ParkingScalarFieldEnum | ParkingScalarFieldEnum[]
   }
 
   /**
-   * Pricing findMany
+   * Parking findMany
    */
-  export type PricingFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * Filter, which Parkings to fetch.
      */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * Filter, which Pricings to fetch.
-     */
-    where?: PricingWhereInput
+    where?: ParkingWhereInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
      * 
-     * Determine the order of Pricings to fetch.
+     * Determine the order of Parkings to fetch.
      */
-    orderBy?: PricingOrderByWithRelationInput | PricingOrderByWithRelationInput[]
+    orderBy?: ParkingOrderByWithRelationInput | ParkingOrderByWithRelationInput[]
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
      * 
-     * Sets the position for listing Pricings.
+     * Sets the position for listing Parkings.
      */
-    cursor?: PricingWhereUniqueInput
+    cursor?: ParkingWhereUniqueInput
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Take `±n` Pricings from the position of the cursor.
+     * Take `±n` Parkings from the position of the cursor.
      */
     take?: number
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
      * 
-     * Skip the first `n` Pricings.
+     * Skip the first `n` Parkings.
      */
     skip?: number
-    distinct?: PricingScalarFieldEnum | PricingScalarFieldEnum[]
+    distinct?: ParkingScalarFieldEnum | ParkingScalarFieldEnum[]
   }
 
   /**
-   * Pricing create
+   * Parking create
    */
-  export type PricingCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * The data needed to create a Parking.
      */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * The data needed to create a Pricing.
-     */
-    data: XOR<PricingCreateInput, PricingUncheckedCreateInput>
+    data: XOR<ParkingCreateInput, ParkingUncheckedCreateInput>
   }
 
   /**
-   * Pricing createMany
+   * Parking createMany
    */
-  export type PricingCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to create many Pricings.
+     * The data used to create many Parkings.
      */
-    data: PricingCreateManyInput | PricingCreateManyInput[]
+    data: ParkingCreateManyInput | ParkingCreateManyInput[]
   }
 
   /**
-   * Pricing createManyAndReturn
+   * Parking createManyAndReturn
    */
-  export type PricingCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelectCreateManyAndReturn<ExtArgs> | null
+    select?: ParkingSelectCreateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * The data used to create many Pricings.
+     * The data used to create many Parkings.
      */
-    data: PricingCreateManyInput | PricingCreateManyInput[]
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PricingIncludeCreateManyAndReturn<ExtArgs> | null
+    data: ParkingCreateManyInput | ParkingCreateManyInput[]
   }
 
   /**
-   * Pricing update
+   * Parking update
    */
-  export type PricingUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * The data needed to update a Parking.
      */
-    include?: PricingInclude<ExtArgs> | null
+    data: XOR<ParkingUpdateInput, ParkingUncheckedUpdateInput>
     /**
-     * The data needed to update a Pricing.
+     * Choose, which Parking to update.
      */
-    data: XOR<PricingUpdateInput, PricingUncheckedUpdateInput>
-    /**
-     * Choose, which Pricing to update.
-     */
-    where: PricingWhereUniqueInput
+    where: ParkingWhereUniqueInput
   }
 
   /**
-   * Pricing updateMany
+   * Parking updateMany
    */
-  export type PricingUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * The data used to update Pricings.
+     * The data used to update Parkings.
      */
-    data: XOR<PricingUpdateManyMutationInput, PricingUncheckedUpdateManyInput>
+    data: XOR<ParkingUpdateManyMutationInput, ParkingUncheckedUpdateManyInput>
     /**
-     * Filter which Pricings to update
+     * Filter which Parkings to update
      */
-    where?: PricingWhereInput
+    where?: ParkingWhereInput
     /**
-     * Limit how many Pricings to update.
+     * Limit how many Parkings to update.
      */
     limit?: number
   }
 
   /**
-   * Pricing updateManyAndReturn
+   * Parking updateManyAndReturn
    */
-  export type PricingUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelectUpdateManyAndReturn<ExtArgs> | null
+    select?: ParkingSelectUpdateManyAndReturn<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * The data used to update Pricings.
+     * The data used to update Parkings.
      */
-    data: XOR<PricingUpdateManyMutationInput, PricingUncheckedUpdateManyInput>
+    data: XOR<ParkingUpdateManyMutationInput, ParkingUncheckedUpdateManyInput>
     /**
-     * Filter which Pricings to update
+     * Filter which Parkings to update
      */
-    where?: PricingWhereInput
+    where?: ParkingWhereInput
     /**
-     * Limit how many Pricings to update.
-     */
-    limit?: number
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PricingIncludeUpdateManyAndReturn<ExtArgs> | null
-  }
-
-  /**
-   * Pricing upsert
-   */
-  export type PricingUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Pricing
-     */
-    select?: PricingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Pricing
-     */
-    omit?: PricingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * The filter to search for the Pricing to update in case it exists.
-     */
-    where: PricingWhereUniqueInput
-    /**
-     * In case the Pricing found by the `where` argument doesn't exist, create a new Pricing with this data.
-     */
-    create: XOR<PricingCreateInput, PricingUncheckedCreateInput>
-    /**
-     * In case the Pricing was found with the provided `where` argument, update it with this data.
-     */
-    update: XOR<PricingUpdateInput, PricingUncheckedUpdateInput>
-  }
-
-  /**
-   * Pricing delete
-   */
-  export type PricingDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Select specific fields to fetch from the Pricing
-     */
-    select?: PricingSelect<ExtArgs> | null
-    /**
-     * Omit specific fields from the Pricing
-     */
-    omit?: PricingOmit<ExtArgs> | null
-    /**
-     * Choose, which related nodes to fetch as well
-     */
-    include?: PricingInclude<ExtArgs> | null
-    /**
-     * Filter which Pricing to delete.
-     */
-    where: PricingWhereUniqueInput
-  }
-
-  /**
-   * Pricing deleteMany
-   */
-  export type PricingDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
-    /**
-     * Filter which Pricings to delete
-     */
-    where?: PricingWhereInput
-    /**
-     * Limit how many Pricings to delete.
+     * Limit how many Parkings to update.
      */
     limit?: number
   }
 
   /**
-   * Pricing without action
+   * Parking upsert
    */
-  export type PricingDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+  export type ParkingUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     /**
-     * Select specific fields to fetch from the Pricing
+     * Select specific fields to fetch from the Parking
      */
-    select?: PricingSelect<ExtArgs> | null
+    select?: ParkingSelect<ExtArgs> | null
     /**
-     * Omit specific fields from the Pricing
+     * Omit specific fields from the Parking
      */
-    omit?: PricingOmit<ExtArgs> | null
+    omit?: ParkingOmit<ExtArgs> | null
     /**
-     * Choose, which related nodes to fetch as well
+     * The filter to search for the Parking to update in case it exists.
      */
-    include?: PricingInclude<ExtArgs> | null
+    where: ParkingWhereUniqueInput
+    /**
+     * In case the Parking found by the `where` argument doesn't exist, create a new Parking with this data.
+     */
+    create: XOR<ParkingCreateInput, ParkingUncheckedCreateInput>
+    /**
+     * In case the Parking was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ParkingUpdateInput, ParkingUncheckedUpdateInput>
+  }
+
+  /**
+   * Parking delete
+   */
+  export type ParkingDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Parking
+     */
+    select?: ParkingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Parking
+     */
+    omit?: ParkingOmit<ExtArgs> | null
+    /**
+     * Filter which Parking to delete.
+     */
+    where: ParkingWhereUniqueInput
+  }
+
+  /**
+   * Parking deleteMany
+   */
+  export type ParkingDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Parkings to delete
+     */
+    where?: ParkingWhereInput
+    /**
+     * Limit how many Parkings to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Parking without action
+   */
+  export type ParkingDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Parking
+     */
+    select?: ParkingSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Parking
+     */
+    omit?: ParkingOmit<ExtArgs> | null
   }
 
 
@@ -6781,8 +6668,7 @@ export namespace Prisma {
   export const UserScalarFieldEnum: {
     id: 'id',
     name: 'name',
-    email: 'email',
-    role: 'role'
+    email: 'email'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -6820,14 +6706,14 @@ export namespace Prisma {
   export type TransactionScalarFieldEnum = (typeof TransactionScalarFieldEnum)[keyof typeof TransactionScalarFieldEnum]
 
 
-  export const PricingScalarFieldEnum: {
+  export const ParkingScalarFieldEnum: {
     id: 'id',
-    ratePerHour: 'ratePerHour',
-    effectiveDate: 'effectiveDate',
-    adminId: 'adminId'
+    name: 'name',
+    location: 'location',
+    totalSpaces: 'totalSpaces'
   };
 
-  export type PricingScalarFieldEnum = (typeof PricingScalarFieldEnum)[keyof typeof PricingScalarFieldEnum]
+  export type ParkingScalarFieldEnum = (typeof ParkingScalarFieldEnum)[keyof typeof ParkingScalarFieldEnum]
 
 
   export const SortOrder: {
@@ -6855,13 +6741,6 @@ export namespace Prisma {
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
-    
-
-
-  /**
-   * Reference to a field of type 'Role'
-   */
-  export type EnumRoleFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Role'>
     
 
 
@@ -6896,20 +6775,16 @@ export namespace Prisma {
     id?: StringFilter<"User"> | string
     name?: StringFilter<"User"> | string
     email?: StringFilter<"User"> | string
-    role?: EnumRoleFilter<"User"> | $Enums.Role
     vehicles?: VehicleListRelationFilter
     tickets?: TicketListRelationFilter
-    pricings?: PricingListRelationFilter
   }
 
   export type UserOrderByWithRelationInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    role?: SortOrder
     vehicles?: VehicleOrderByRelationAggregateInput
     tickets?: TicketOrderByRelationAggregateInput
-    pricings?: PricingOrderByRelationAggregateInput
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -6919,17 +6794,14 @@ export namespace Prisma {
     OR?: UserWhereInput[]
     NOT?: UserWhereInput | UserWhereInput[]
     name?: StringFilter<"User"> | string
-    role?: EnumRoleFilter<"User"> | $Enums.Role
     vehicles?: VehicleListRelationFilter
     tickets?: TicketListRelationFilter
-    pricings?: PricingListRelationFilter
   }, "id" | "email">
 
   export type UserOrderByWithAggregationInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    role?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
     _min?: UserMinOrderByAggregateInput
@@ -6942,7 +6814,6 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"User"> | string
     name?: StringWithAggregatesFilter<"User"> | string
     email?: StringWithAggregatesFilter<"User"> | string
-    role?: EnumRoleWithAggregatesFilter<"User"> | $Enums.Role
   }
 
   export type VehicleWhereInput = {
@@ -7116,117 +6987,103 @@ export namespace Prisma {
     date?: DateTimeWithAggregatesFilter<"Transaction"> | Date | string
   }
 
-  export type PricingWhereInput = {
-    AND?: PricingWhereInput | PricingWhereInput[]
-    OR?: PricingWhereInput[]
-    NOT?: PricingWhereInput | PricingWhereInput[]
-    id?: StringFilter<"Pricing"> | string
-    ratePerHour?: FloatFilter<"Pricing"> | number
-    effectiveDate?: DateTimeFilter<"Pricing"> | Date | string
-    adminId?: StringFilter<"Pricing"> | string
-    admin?: XOR<UserScalarRelationFilter, UserWhereInput>
+  export type ParkingWhereInput = {
+    AND?: ParkingWhereInput | ParkingWhereInput[]
+    OR?: ParkingWhereInput[]
+    NOT?: ParkingWhereInput | ParkingWhereInput[]
+    id?: StringFilter<"Parking"> | string
+    name?: StringFilter<"Parking"> | string
+    location?: StringFilter<"Parking"> | string
+    totalSpaces?: IntFilter<"Parking"> | number
   }
 
-  export type PricingOrderByWithRelationInput = {
+  export type ParkingOrderByWithRelationInput = {
     id?: SortOrder
-    ratePerHour?: SortOrder
-    effectiveDate?: SortOrder
-    adminId?: SortOrder
-    admin?: UserOrderByWithRelationInput
+    name?: SortOrder
+    location?: SortOrder
+    totalSpaces?: SortOrder
   }
 
-  export type PricingWhereUniqueInput = Prisma.AtLeast<{
+  export type ParkingWhereUniqueInput = Prisma.AtLeast<{
     id?: string
-    AND?: PricingWhereInput | PricingWhereInput[]
-    OR?: PricingWhereInput[]
-    NOT?: PricingWhereInput | PricingWhereInput[]
-    ratePerHour?: FloatFilter<"Pricing"> | number
-    effectiveDate?: DateTimeFilter<"Pricing"> | Date | string
-    adminId?: StringFilter<"Pricing"> | string
-    admin?: XOR<UserScalarRelationFilter, UserWhereInput>
+    AND?: ParkingWhereInput | ParkingWhereInput[]
+    OR?: ParkingWhereInput[]
+    NOT?: ParkingWhereInput | ParkingWhereInput[]
+    name?: StringFilter<"Parking"> | string
+    location?: StringFilter<"Parking"> | string
+    totalSpaces?: IntFilter<"Parking"> | number
   }, "id">
 
-  export type PricingOrderByWithAggregationInput = {
+  export type ParkingOrderByWithAggregationInput = {
     id?: SortOrder
-    ratePerHour?: SortOrder
-    effectiveDate?: SortOrder
-    adminId?: SortOrder
-    _count?: PricingCountOrderByAggregateInput
-    _avg?: PricingAvgOrderByAggregateInput
-    _max?: PricingMaxOrderByAggregateInput
-    _min?: PricingMinOrderByAggregateInput
-    _sum?: PricingSumOrderByAggregateInput
+    name?: SortOrder
+    location?: SortOrder
+    totalSpaces?: SortOrder
+    _count?: ParkingCountOrderByAggregateInput
+    _avg?: ParkingAvgOrderByAggregateInput
+    _max?: ParkingMaxOrderByAggregateInput
+    _min?: ParkingMinOrderByAggregateInput
+    _sum?: ParkingSumOrderByAggregateInput
   }
 
-  export type PricingScalarWhereWithAggregatesInput = {
-    AND?: PricingScalarWhereWithAggregatesInput | PricingScalarWhereWithAggregatesInput[]
-    OR?: PricingScalarWhereWithAggregatesInput[]
-    NOT?: PricingScalarWhereWithAggregatesInput | PricingScalarWhereWithAggregatesInput[]
-    id?: StringWithAggregatesFilter<"Pricing"> | string
-    ratePerHour?: FloatWithAggregatesFilter<"Pricing"> | number
-    effectiveDate?: DateTimeWithAggregatesFilter<"Pricing"> | Date | string
-    adminId?: StringWithAggregatesFilter<"Pricing"> | string
+  export type ParkingScalarWhereWithAggregatesInput = {
+    AND?: ParkingScalarWhereWithAggregatesInput | ParkingScalarWhereWithAggregatesInput[]
+    OR?: ParkingScalarWhereWithAggregatesInput[]
+    NOT?: ParkingScalarWhereWithAggregatesInput | ParkingScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Parking"> | string
+    name?: StringWithAggregatesFilter<"Parking"> | string
+    location?: StringWithAggregatesFilter<"Parking"> | string
+    totalSpaces?: IntWithAggregatesFilter<"Parking"> | number
   }
 
   export type UserCreateInput = {
     id?: string
     name: string
     email: string
-    role: $Enums.Role
     vehicles?: VehicleCreateNestedManyWithoutUserInput
     tickets?: TicketCreateNestedManyWithoutUserInput
-    pricings?: PricingCreateNestedManyWithoutAdminInput
   }
 
   export type UserUncheckedCreateInput = {
     id?: string
     name: string
     email: string
-    role: $Enums.Role
     vehicles?: VehicleUncheckedCreateNestedManyWithoutUserInput
     tickets?: TicketUncheckedCreateNestedManyWithoutUserInput
-    pricings?: PricingUncheckedCreateNestedManyWithoutAdminInput
   }
 
   export type UserUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     vehicles?: VehicleUpdateManyWithoutUserNestedInput
     tickets?: TicketUpdateManyWithoutUserNestedInput
-    pricings?: PricingUpdateManyWithoutAdminNestedInput
   }
 
   export type UserUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     vehicles?: VehicleUncheckedUpdateManyWithoutUserNestedInput
     tickets?: TicketUncheckedUpdateManyWithoutUserNestedInput
-    pricings?: PricingUncheckedUpdateManyWithoutAdminNestedInput
   }
 
   export type UserCreateManyInput = {
     id?: string
     name: string
     email: string
-    role: $Enums.Role
   }
 
   export type UserUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
 
   export type UserUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
   }
 
   export type VehicleCreateInput = {
@@ -7394,52 +7251,53 @@ export namespace Prisma {
     date?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
-  export type PricingCreateInput = {
+  export type ParkingCreateInput = {
     id?: string
-    ratePerHour: number
-    effectiveDate?: Date | string
-    admin: UserCreateNestedOneWithoutPricingsInput
+    name: string
+    location: string
+    totalSpaces: number
   }
 
-  export type PricingUncheckedCreateInput = {
+  export type ParkingUncheckedCreateInput = {
     id?: string
-    ratePerHour: number
-    effectiveDate?: Date | string
-    adminId: string
+    name: string
+    location: string
+    totalSpaces: number
   }
 
-  export type PricingUpdateInput = {
+  export type ParkingUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    ratePerHour?: FloatFieldUpdateOperationsInput | number
-    effectiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    admin?: UserUpdateOneRequiredWithoutPricingsNestedInput
+    name?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    totalSpaces?: IntFieldUpdateOperationsInput | number
   }
 
-  export type PricingUncheckedUpdateInput = {
+  export type ParkingUncheckedUpdateInput = {
     id?: StringFieldUpdateOperationsInput | string
-    ratePerHour?: FloatFieldUpdateOperationsInput | number
-    effectiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    adminId?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    totalSpaces?: IntFieldUpdateOperationsInput | number
   }
 
-  export type PricingCreateManyInput = {
+  export type ParkingCreateManyInput = {
     id?: string
-    ratePerHour: number
-    effectiveDate?: Date | string
-    adminId: string
+    name: string
+    location: string
+    totalSpaces: number
   }
 
-  export type PricingUpdateManyMutationInput = {
+  export type ParkingUpdateManyMutationInput = {
     id?: StringFieldUpdateOperationsInput | string
-    ratePerHour?: FloatFieldUpdateOperationsInput | number
-    effectiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
+    name?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    totalSpaces?: IntFieldUpdateOperationsInput | number
   }
 
-  export type PricingUncheckedUpdateManyInput = {
+  export type ParkingUncheckedUpdateManyInput = {
     id?: StringFieldUpdateOperationsInput | string
-    ratePerHour?: FloatFieldUpdateOperationsInput | number
-    effectiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
-    adminId?: StringFieldUpdateOperationsInput | string
+    name?: StringFieldUpdateOperationsInput | string
+    location?: StringFieldUpdateOperationsInput | string
+    totalSpaces?: IntFieldUpdateOperationsInput | number
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -7456,13 +7314,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type EnumRoleFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
-    not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
-  }
-
   export type VehicleListRelationFilter = {
     every?: VehicleWhereInput
     some?: VehicleWhereInput
@@ -7475,12 +7326,6 @@ export namespace Prisma {
     none?: TicketWhereInput
   }
 
-  export type PricingListRelationFilter = {
-    every?: PricingWhereInput
-    some?: PricingWhereInput
-    none?: PricingWhereInput
-  }
-
   export type VehicleOrderByRelationAggregateInput = {
     _count?: SortOrder
   }
@@ -7489,29 +7334,22 @@ export namespace Prisma {
     _count?: SortOrder
   }
 
-  export type PricingOrderByRelationAggregateInput = {
-    _count?: SortOrder
-  }
-
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    role?: SortOrder
   }
 
   export type UserMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    role?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     email?: SortOrder
-    role?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -7529,16 +7367,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type EnumRoleWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
-    not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumRoleFilter<$PrismaModel>
-    _max?: NestedEnumRoleFilter<$PrismaModel>
   }
 
   export type UserScalarRelationFilter = {
@@ -7720,33 +7548,60 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
-  export type PricingCountOrderByAggregateInput = {
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type ParkingCountOrderByAggregateInput = {
     id?: SortOrder
-    ratePerHour?: SortOrder
-    effectiveDate?: SortOrder
-    adminId?: SortOrder
+    name?: SortOrder
+    location?: SortOrder
+    totalSpaces?: SortOrder
   }
 
-  export type PricingAvgOrderByAggregateInput = {
-    ratePerHour?: SortOrder
+  export type ParkingAvgOrderByAggregateInput = {
+    totalSpaces?: SortOrder
   }
 
-  export type PricingMaxOrderByAggregateInput = {
+  export type ParkingMaxOrderByAggregateInput = {
     id?: SortOrder
-    ratePerHour?: SortOrder
-    effectiveDate?: SortOrder
-    adminId?: SortOrder
+    name?: SortOrder
+    location?: SortOrder
+    totalSpaces?: SortOrder
   }
 
-  export type PricingMinOrderByAggregateInput = {
+  export type ParkingMinOrderByAggregateInput = {
     id?: SortOrder
-    ratePerHour?: SortOrder
-    effectiveDate?: SortOrder
-    adminId?: SortOrder
+    name?: SortOrder
+    location?: SortOrder
+    totalSpaces?: SortOrder
   }
 
-  export type PricingSumOrderByAggregateInput = {
-    ratePerHour?: SortOrder
+  export type ParkingSumOrderByAggregateInput = {
+    totalSpaces?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type VehicleCreateNestedManyWithoutUserInput = {
@@ -7763,13 +7618,6 @@ export namespace Prisma {
     connect?: TicketWhereUniqueInput | TicketWhereUniqueInput[]
   }
 
-  export type PricingCreateNestedManyWithoutAdminInput = {
-    create?: XOR<PricingCreateWithoutAdminInput, PricingUncheckedCreateWithoutAdminInput> | PricingCreateWithoutAdminInput[] | PricingUncheckedCreateWithoutAdminInput[]
-    connectOrCreate?: PricingCreateOrConnectWithoutAdminInput | PricingCreateOrConnectWithoutAdminInput[]
-    createMany?: PricingCreateManyAdminInputEnvelope
-    connect?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-  }
-
   export type VehicleUncheckedCreateNestedManyWithoutUserInput = {
     create?: XOR<VehicleCreateWithoutUserInput, VehicleUncheckedCreateWithoutUserInput> | VehicleCreateWithoutUserInput[] | VehicleUncheckedCreateWithoutUserInput[]
     connectOrCreate?: VehicleCreateOrConnectWithoutUserInput | VehicleCreateOrConnectWithoutUserInput[]
@@ -7784,19 +7632,8 @@ export namespace Prisma {
     connect?: TicketWhereUniqueInput | TicketWhereUniqueInput[]
   }
 
-  export type PricingUncheckedCreateNestedManyWithoutAdminInput = {
-    create?: XOR<PricingCreateWithoutAdminInput, PricingUncheckedCreateWithoutAdminInput> | PricingCreateWithoutAdminInput[] | PricingUncheckedCreateWithoutAdminInput[]
-    connectOrCreate?: PricingCreateOrConnectWithoutAdminInput | PricingCreateOrConnectWithoutAdminInput[]
-    createMany?: PricingCreateManyAdminInputEnvelope
-    connect?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-  }
-
   export type StringFieldUpdateOperationsInput = {
     set?: string
-  }
-
-  export type EnumRoleFieldUpdateOperationsInput = {
-    set?: $Enums.Role
   }
 
   export type VehicleUpdateManyWithoutUserNestedInput = {
@@ -7827,20 +7664,6 @@ export namespace Prisma {
     deleteMany?: TicketScalarWhereInput | TicketScalarWhereInput[]
   }
 
-  export type PricingUpdateManyWithoutAdminNestedInput = {
-    create?: XOR<PricingCreateWithoutAdminInput, PricingUncheckedCreateWithoutAdminInput> | PricingCreateWithoutAdminInput[] | PricingUncheckedCreateWithoutAdminInput[]
-    connectOrCreate?: PricingCreateOrConnectWithoutAdminInput | PricingCreateOrConnectWithoutAdminInput[]
-    upsert?: PricingUpsertWithWhereUniqueWithoutAdminInput | PricingUpsertWithWhereUniqueWithoutAdminInput[]
-    createMany?: PricingCreateManyAdminInputEnvelope
-    set?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    disconnect?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    delete?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    connect?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    update?: PricingUpdateWithWhereUniqueWithoutAdminInput | PricingUpdateWithWhereUniqueWithoutAdminInput[]
-    updateMany?: PricingUpdateManyWithWhereWithoutAdminInput | PricingUpdateManyWithWhereWithoutAdminInput[]
-    deleteMany?: PricingScalarWhereInput | PricingScalarWhereInput[]
-  }
-
   export type VehicleUncheckedUpdateManyWithoutUserNestedInput = {
     create?: XOR<VehicleCreateWithoutUserInput, VehicleUncheckedCreateWithoutUserInput> | VehicleCreateWithoutUserInput[] | VehicleUncheckedCreateWithoutUserInput[]
     connectOrCreate?: VehicleCreateOrConnectWithoutUserInput | VehicleCreateOrConnectWithoutUserInput[]
@@ -7867,20 +7690,6 @@ export namespace Prisma {
     update?: TicketUpdateWithWhereUniqueWithoutUserInput | TicketUpdateWithWhereUniqueWithoutUserInput[]
     updateMany?: TicketUpdateManyWithWhereWithoutUserInput | TicketUpdateManyWithWhereWithoutUserInput[]
     deleteMany?: TicketScalarWhereInput | TicketScalarWhereInput[]
-  }
-
-  export type PricingUncheckedUpdateManyWithoutAdminNestedInput = {
-    create?: XOR<PricingCreateWithoutAdminInput, PricingUncheckedCreateWithoutAdminInput> | PricingCreateWithoutAdminInput[] | PricingUncheckedCreateWithoutAdminInput[]
-    connectOrCreate?: PricingCreateOrConnectWithoutAdminInput | PricingCreateOrConnectWithoutAdminInput[]
-    upsert?: PricingUpsertWithWhereUniqueWithoutAdminInput | PricingUpsertWithWhereUniqueWithoutAdminInput[]
-    createMany?: PricingCreateManyAdminInputEnvelope
-    set?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    disconnect?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    delete?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    connect?: PricingWhereUniqueInput | PricingWhereUniqueInput[]
-    update?: PricingUpdateWithWhereUniqueWithoutAdminInput | PricingUpdateWithWhereUniqueWithoutAdminInput[]
-    updateMany?: PricingUpdateManyWithWhereWithoutAdminInput | PricingUpdateManyWithWhereWithoutAdminInput[]
-    deleteMany?: PricingScalarWhereInput | PricingScalarWhereInput[]
   }
 
   export type UserCreateNestedOneWithoutVehiclesInput = {
@@ -8029,18 +7838,12 @@ export namespace Prisma {
     update?: XOR<XOR<TicketUpdateToOneWithWhereWithoutTransactionInput, TicketUpdateWithoutTransactionInput>, TicketUncheckedUpdateWithoutTransactionInput>
   }
 
-  export type UserCreateNestedOneWithoutPricingsInput = {
-    create?: XOR<UserCreateWithoutPricingsInput, UserUncheckedCreateWithoutPricingsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutPricingsInput
-    connect?: UserWhereUniqueInput
-  }
-
-  export type UserUpdateOneRequiredWithoutPricingsNestedInput = {
-    create?: XOR<UserCreateWithoutPricingsInput, UserUncheckedCreateWithoutPricingsInput>
-    connectOrCreate?: UserCreateOrConnectWithoutPricingsInput
-    upsert?: UserUpsertWithoutPricingsInput
-    connect?: UserWhereUniqueInput
-    update?: XOR<XOR<UserUpdateToOneWithWhereWithoutPricingsInput, UserUpdateWithoutPricingsInput>, UserUncheckedUpdateWithoutPricingsInput>
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
   }
 
   export type NestedStringFilter<$PrismaModel = never> = {
@@ -8055,13 +7858,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedEnumRoleFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
-    not?: NestedEnumRoleFilter<$PrismaModel> | $Enums.Role
   }
 
   export type NestedStringWithAggregatesFilter<$PrismaModel = never> = {
@@ -8090,16 +7886,6 @@ export namespace Prisma {
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
     not?: NestedIntFilter<$PrismaModel> | number
-  }
-
-  export type NestedEnumRoleWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: $Enums.Role | EnumRoleFieldRefInput<$PrismaModel>
-    in?: $Enums.Role[]
-    notIn?: $Enums.Role[]
-    not?: NestedEnumRoleWithAggregatesFilter<$PrismaModel> | $Enums.Role
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedEnumRoleFilter<$PrismaModel>
-    _max?: NestedEnumRoleFilter<$PrismaModel>
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -8190,6 +7976,22 @@ export namespace Prisma {
     _max?: NestedFloatFilter<$PrismaModel>
   }
 
+  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
   export type VehicleCreateWithoutUserInput = {
     id?: string
     plate: string
@@ -8238,27 +8040,6 @@ export namespace Prisma {
 
   export type TicketCreateManyUserInputEnvelope = {
     data: TicketCreateManyUserInput | TicketCreateManyUserInput[]
-  }
-
-  export type PricingCreateWithoutAdminInput = {
-    id?: string
-    ratePerHour: number
-    effectiveDate?: Date | string
-  }
-
-  export type PricingUncheckedCreateWithoutAdminInput = {
-    id?: string
-    ratePerHour: number
-    effectiveDate?: Date | string
-  }
-
-  export type PricingCreateOrConnectWithoutAdminInput = {
-    where: PricingWhereUniqueInput
-    create: XOR<PricingCreateWithoutAdminInput, PricingUncheckedCreateWithoutAdminInput>
-  }
-
-  export type PricingCreateManyAdminInputEnvelope = {
-    data: PricingCreateManyAdminInput | PricingCreateManyAdminInput[]
   }
 
   export type VehicleUpsertWithWhereUniqueWithoutUserInput = {
@@ -8315,48 +8096,18 @@ export namespace Prisma {
     userId?: StringFilter<"Ticket"> | string
   }
 
-  export type PricingUpsertWithWhereUniqueWithoutAdminInput = {
-    where: PricingWhereUniqueInput
-    update: XOR<PricingUpdateWithoutAdminInput, PricingUncheckedUpdateWithoutAdminInput>
-    create: XOR<PricingCreateWithoutAdminInput, PricingUncheckedCreateWithoutAdminInput>
-  }
-
-  export type PricingUpdateWithWhereUniqueWithoutAdminInput = {
-    where: PricingWhereUniqueInput
-    data: XOR<PricingUpdateWithoutAdminInput, PricingUncheckedUpdateWithoutAdminInput>
-  }
-
-  export type PricingUpdateManyWithWhereWithoutAdminInput = {
-    where: PricingScalarWhereInput
-    data: XOR<PricingUpdateManyMutationInput, PricingUncheckedUpdateManyWithoutAdminInput>
-  }
-
-  export type PricingScalarWhereInput = {
-    AND?: PricingScalarWhereInput | PricingScalarWhereInput[]
-    OR?: PricingScalarWhereInput[]
-    NOT?: PricingScalarWhereInput | PricingScalarWhereInput[]
-    id?: StringFilter<"Pricing"> | string
-    ratePerHour?: FloatFilter<"Pricing"> | number
-    effectiveDate?: DateTimeFilter<"Pricing"> | Date | string
-    adminId?: StringFilter<"Pricing"> | string
-  }
-
   export type UserCreateWithoutVehiclesInput = {
     id?: string
     name: string
     email: string
-    role: $Enums.Role
     tickets?: TicketCreateNestedManyWithoutUserInput
-    pricings?: PricingCreateNestedManyWithoutAdminInput
   }
 
   export type UserUncheckedCreateWithoutVehiclesInput = {
     id?: string
     name: string
     email: string
-    role: $Enums.Role
     tickets?: TicketUncheckedCreateNestedManyWithoutUserInput
-    pricings?: PricingUncheckedCreateNestedManyWithoutAdminInput
   }
 
   export type UserCreateOrConnectWithoutVehiclesInput = {
@@ -8404,18 +8155,14 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     tickets?: TicketUpdateManyWithoutUserNestedInput
-    pricings?: PricingUpdateManyWithoutAdminNestedInput
   }
 
   export type UserUncheckedUpdateWithoutVehiclesInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     tickets?: TicketUncheckedUpdateManyWithoutUserNestedInput
-    pricings?: PricingUncheckedUpdateManyWithoutAdminNestedInput
   }
 
   export type TicketUpsertWithWhereUniqueWithoutVehicleInput = {
@@ -8459,18 +8206,14 @@ export namespace Prisma {
     id?: string
     name: string
     email: string
-    role: $Enums.Role
     vehicles?: VehicleCreateNestedManyWithoutUserInput
-    pricings?: PricingCreateNestedManyWithoutAdminInput
   }
 
   export type UserUncheckedCreateWithoutTicketsInput = {
     id?: string
     name: string
     email: string
-    role: $Enums.Role
     vehicles?: VehicleUncheckedCreateNestedManyWithoutUserInput
-    pricings?: PricingUncheckedCreateNestedManyWithoutAdminInput
   }
 
   export type UserCreateOrConnectWithoutTicketsInput = {
@@ -8537,18 +8280,14 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     vehicles?: VehicleUpdateManyWithoutUserNestedInput
-    pricings?: PricingUpdateManyWithoutAdminNestedInput
   }
 
   export type UserUncheckedUpdateWithoutTicketsInput = {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
     vehicles?: VehicleUncheckedUpdateManyWithoutUserNestedInput
-    pricings?: PricingUncheckedUpdateManyWithoutAdminNestedInput
   }
 
   export type TransactionUpsertWithoutTicketInput = {
@@ -8622,58 +8361,6 @@ export namespace Prisma {
     userId?: StringFieldUpdateOperationsInput | string
   }
 
-  export type UserCreateWithoutPricingsInput = {
-    id?: string
-    name: string
-    email: string
-    role: $Enums.Role
-    vehicles?: VehicleCreateNestedManyWithoutUserInput
-    tickets?: TicketCreateNestedManyWithoutUserInput
-  }
-
-  export type UserUncheckedCreateWithoutPricingsInput = {
-    id?: string
-    name: string
-    email: string
-    role: $Enums.Role
-    vehicles?: VehicleUncheckedCreateNestedManyWithoutUserInput
-    tickets?: TicketUncheckedCreateNestedManyWithoutUserInput
-  }
-
-  export type UserCreateOrConnectWithoutPricingsInput = {
-    where: UserWhereUniqueInput
-    create: XOR<UserCreateWithoutPricingsInput, UserUncheckedCreateWithoutPricingsInput>
-  }
-
-  export type UserUpsertWithoutPricingsInput = {
-    update: XOR<UserUpdateWithoutPricingsInput, UserUncheckedUpdateWithoutPricingsInput>
-    create: XOR<UserCreateWithoutPricingsInput, UserUncheckedCreateWithoutPricingsInput>
-    where?: UserWhereInput
-  }
-
-  export type UserUpdateToOneWithWhereWithoutPricingsInput = {
-    where?: UserWhereInput
-    data: XOR<UserUpdateWithoutPricingsInput, UserUncheckedUpdateWithoutPricingsInput>
-  }
-
-  export type UserUpdateWithoutPricingsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
-    vehicles?: VehicleUpdateManyWithoutUserNestedInput
-    tickets?: TicketUpdateManyWithoutUserNestedInput
-  }
-
-  export type UserUncheckedUpdateWithoutPricingsInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    name?: StringFieldUpdateOperationsInput | string
-    email?: StringFieldUpdateOperationsInput | string
-    role?: EnumRoleFieldUpdateOperationsInput | $Enums.Role
-    vehicles?: VehicleUncheckedUpdateManyWithoutUserNestedInput
-    tickets?: TicketUncheckedUpdateManyWithoutUserNestedInput
-  }
-
   export type VehicleCreateManyUserInput = {
     id?: string
     plate: string
@@ -8686,12 +8373,6 @@ export namespace Prisma {
     entryDate?: Date | string
     exitDate?: Date | string | null
     vehicleId: string
-  }
-
-  export type PricingCreateManyAdminInput = {
-    id?: string
-    ratePerHour: number
-    effectiveDate?: Date | string
   }
 
   export type VehicleUpdateWithoutUserInput = {
@@ -8738,24 +8419,6 @@ export namespace Prisma {
     entryDate?: DateTimeFieldUpdateOperationsInput | Date | string
     exitDate?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     vehicleId?: StringFieldUpdateOperationsInput | string
-  }
-
-  export type PricingUpdateWithoutAdminInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    ratePerHour?: FloatFieldUpdateOperationsInput | number
-    effectiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PricingUncheckedUpdateWithoutAdminInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    ratePerHour?: FloatFieldUpdateOperationsInput | number
-    effectiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
-  }
-
-  export type PricingUncheckedUpdateManyWithoutAdminInput = {
-    id?: StringFieldUpdateOperationsInput | string
-    ratePerHour?: FloatFieldUpdateOperationsInput | number
-    effectiveDate?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type TicketCreateManyVehicleInput = {

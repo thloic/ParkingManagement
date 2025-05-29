@@ -1,6 +1,5 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../app/generated/prisma"
 }
 
 datasource db {
@@ -14,48 +13,48 @@ enum Role {
 }
 
 model User {
-  id        String     @id @default(cuid())
-  name      String
-  email     String     @unique
-  role      Role
-  vehicles  Vehicle[]plat
-  tickets   Ticket[]
-  pricings  Pricing[]
+  id       String    @id @default(cuid())
+  name     String
+  email    String    @unique
+  tickets  Ticket[]
 }
 
-model Vehicle {
-  id        String   @id @default(cuid())
-  plate     String   @unique
-  make      String
-  color     String
-  user      User     @relation(fields: [userId], references: [id])
-  userId    String
-  tickets   Ti
+enum TypeVehicule {
+  Moto
+  voiture
+  Camion
 }
+
 
 model Ticket {
-  id             String      @id @default(cuid())
-  entryDate      DateTime    @default(now())
-  exitDate       DateTime?
-  vehicle        Vehicle     @relation(fields: [vehicleId], references: [id])
-  vehicleId      String
-  user           User        @relation(fields: [userId], references: [id])
-  userId         String
-  transaction    Transaction?
+  id          String       @id @default(cuid())
+  entryDate   DateTime     @default(now())
+  exitDate    DateTime?
 }
 
 model Transaction {
-  id        String   @id @default(cuid())
-  ticket    Ticket   @relation(fields: [ticketId], references: [id])
-  ticketId  String   @unique
-  amount    Float
-  date      DateTime @default(now())
+  id       String   @id @default(cuid())
+  ticket   Ticket   @relation(fields: [ticketId], references: [id])
+  ticketId String   @unique
+  amount   Float
+  date     DateTime @default(now())
 }
 
-model Pricing {
-  id             String   @id @default(cuid())
-  ratePerHour    Float
-  effectiveDate  DateTime @default(now())
-  admin          User     @relation(fields: [adminId], references: [id])
-  adminId        String
+model Parking {
+  id        String   @id @default(cuid())
+  name      String
+  location  String
+  totalSpaces Int
+  vehicle   Vehicle? @relation(fields: [vehicleId], references: [id])
+  vehicleId String?  @unique 
+}
+
+model Vehicle {
+  id         String   @id @default(cuid())
+  plate      String   @unique
+  status     Boolean
+  entryTime  DateTime @default(now())
+  exitTime   DateTime?
+  type       TypeVehicule
+  parking    Parking? 
 }

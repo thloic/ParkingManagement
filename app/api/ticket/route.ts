@@ -1,4 +1,6 @@
 import { NextResponse } from "next/server"
+import prisma from '@/lib/prisma';
+
 
 // recuperation de tous les tickets
  export async function GET(){

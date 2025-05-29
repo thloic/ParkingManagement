@@ -1,9 +1,11 @@
+import { UserButton } from "@clerk/nextjs";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
   return (
   <div>
+    {/* <UserButton /> */}
    <main className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-white px-4">
       <div className="text-center max-w-xl">
         <h1 className="text-5xl font-extrabold text-blue-800 mb-6">

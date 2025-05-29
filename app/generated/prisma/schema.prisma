@@ -17,10 +17,8 @@ model User {
   id       String    @id @default(cuid())
   name     String
   email    String    @unique
-  role     Role
   vehicles Vehicle[]
   tickets  Ticket[]
-  pricings Pricing[]
 }
 
 model Vehicle {
@@ -52,10 +50,9 @@ model Transaction {
   date     DateTime @default(now())
 }
 
-model Pricing {
-  id            String   @id @default(cuid())
-  ratePerHour   Float
-  effectiveDate DateTime @default(now())
-  admin         User     @relation(fields: [adminId], references: [id])
-  adminId       String
+model Parking {
+  id          String @id @default(cuid())
+  name        String
+  location    String
+  totalSpaces Int
 }
